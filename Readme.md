@@ -1,0 +1,2 @@
+## ChitChat
+This is a simple chat messaging application created using Java and JavaFx. It has separate client and server packages which include their respective UI's, controllers and application layers. Resources include the graphics/icons that are used throughout the application.
