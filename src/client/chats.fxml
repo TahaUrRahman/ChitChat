@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Chats">
+    <ImageView fitHeight="29.0" fitWidth="23.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true"
+               preserveRatio="true" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="14.0">
+        <Image url="@../resources/logo.png"/>
+    </ImageView>
+    <Text fx:id="LogoText" fill="#464646" layoutX="61.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="ChitChat" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="13.89453125">
+        <font>
+          <Font name="Century Gothic" size="18.0"/>
+        </font>
+    </Text>
+    <Button fx:id="ModeButton" layoutX="764.6" layoutY="11.0" mnemonicParsing="false" onAction="#ChangeColorMode"
+            style="-fx-background-color: #fff; -fx-border-color: #12004A;" text="Dark Theme" textFill="#595959"
+            AnchorPane.rightAnchor="47.39999999999998" AnchorPane.topAnchor="11.0">
+        <font>
+          <Font name="Century Gothic" size="12.0"/>
+        </font>
+    </Button>
+    <Line fx:id="DesignLine" endX="749.7929077148438" endY="-7.8701982498168945" layoutX="225.0" layoutY="48.0"
+          startX="-216.0144500732422" startY="-7.8701982498168945" stroke="#9f9f9f" AnchorPane.rightAnchor="-0.5"
+          AnchorPane.topAnchor="47.5">
+        <rotationAxis>
+          <Point3D/>
+        </rotationAxis>
+    </Line>
+    <ScrollPane layoutX="17.0" layoutY="363.0" prefHeight="187.0" prefWidth="184.0">
+        <GridPane fx:id="RequestsArea" prefHeight="172.0" prefWidth="202.0">
+            <columnConstraints>
+                <ColumnConstraints  hgrow="SOMETIMES" maxWidth="121.5999755859375" minWidth="10.0"
+                                   prefWidth="87.99999389648437"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.40001220703127" minWidth="10.0"
+                                   prefWidth="114.80000610351564"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="83.60001220703126" minHeight="10.0" prefHeight="42.999993896484376"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="62.4000244140625" minHeight="10.0" prefHeight="46.39998779296876"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="54.400000000000006" minHeight="10.0" prefHeight="53.600012207031256"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="44.799963378906256" minHeight="10.0" prefHeight="44.799963378906256"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="30.39999999999999" minHeight="10.0" prefHeight="30.39999999999999"
+                                vgrow="SOMETIMES"/>
+            </rowConstraints>
+        </GridPane>
+    </ScrollPane>
+    <Button fx:id="AddFriend" layoutX="113.0" layoutY="559.0" mnemonicParsing="false" onAction="#AddFriendPressed"
+            prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #12004A; -fx-text-fill: #fff;"
+            text="Add Friends" textFill="#646464" AnchorPane.bottomAnchor="14.600000000000023"
+            AnchorPane.leftAnchor="113.0"/>
+    <Text fx:id="ChatsHeading" fill="#545454" layoutX="8.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Chats: " wrappingWidth="117.79336547851562">
+        <font>
+          <Font name="Century Gothic Bold" size="13.0"/>
+        </font>
+    </Text>
+    <ScrollPane fx:id="ChatScrollPane" layoutX="17.0" layoutY="98.0" prefHeight="230.0" prefWidth="184.0">
+        <GridPane fx:id="ChatGrid" prefHeight="226.0" prefWidth="200.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="69.79999389648438" minHeight="10.0" prefHeight="31.000006103515624"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="121.00000610351563" minHeight="0.0" prefHeight="40.59999389648437"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="125.20001831054688" minHeight="10.0" prefHeight="34.20001831054688"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="125.20001831054688" minHeight="10.0" prefHeight="38.199981689453125"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="125.20001831054688" minHeight="10.0" prefHeight="41.99999389648437"
+                                vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="125.20001831054688" minHeight="10.0" prefHeight="41.199987792968756"
+                                vgrow="SOMETIMES"/>
+            </rowConstraints>
+        </GridPane>
+    </ScrollPane>
+    <Button fx:id="RefreshButton" layoutX="17.0" layoutY="559.0" mnemonicParsing="false" onAction="#Refresh"
+            prefHeight="26.0" prefWidth="79.0" style="-fx-border-color: #12004A; -fx-background-color: #fff;"
+            text="Refresh" textFill="#4f4f4f">
+        <font>
+          <Font name="Century Gothic" size="12.0"/>
+        </font>
+    </Button>
+    <AnchorPane layoutX="202.0" layoutY="47.0" prefHeight="550.0" prefWidth="699.0">
+        <AnchorPane layoutX="13.0" layoutY="5.0" prefHeight="56.0" prefWidth="653.0">
+            <Text fx:id="FriendName" fill="#414141" layoutX="12.0" layoutY="33.0" strokeType="OUTSIDE"
+                  strokeWidth="0.0" text="Username" AnchorPane.leftAnchor="12.0"
+                  AnchorPane.topAnchor="13.576171875">
+                <font>
+                    <Font name="Century Gothic" size="18.0"/>
+                </font>
+            </Text>
+        </AnchorPane>
+        <ScrollPane layoutX="15.0" layoutY="57.0" prefHeight="404.0" prefWidth="653.0">
+            <GridPane fx:id="MainCharGrid" prefHeight="399.0" prefWidth="648.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="125.4" minHeight="10.0" prefHeight="61.8" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="193.4" minHeight="10.0" prefHeight="56.79999999999999"
+                                    vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="172.99998168945314" minHeight="10.0"
+                                    prefHeight="64.79998779296875" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="155.20001831054685" minHeight="10.0"
+                                    prefHeight="63.199987792968756" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="125.5999816894531" minHeight="10.0"
+                                    prefHeight="68.00001220703123" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="97.60001220703123" minHeight="10.0"
+                                    prefHeight="79.79997558593749" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="97.60001220703123" minHeight="10.0"
+                                    prefHeight="68.60002441406249" vgrow="SOMETIMES"/>
+                </rowConstraints>
+            </GridPane>
+        </ScrollPane>
+        <AnchorPane layoutX="16.0" layoutY="466.0" prefHeight="64.0" prefWidth="653.0">
+            <TextArea fx:id="ChatTextArea" layoutY="13.0" prefHeight="38.0" prefWidth="583.0"/>
+            <Button fx:id="SendMessageButton" layoutX="601.0" layoutY="13.0" mnemonicParsing="false"
+                    onAction="#SendMessage" prefHeight="38.0" prefWidth="52.0" text="Send" textFill="#595959"/>
+        </AnchorPane>
+    </AnchorPane>
+    <Text fx:id="RequestsHeading" fill="#545454" layoutX="8.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Friend Requests:" wrappingWidth="184.19335174560547">
+        <font>
+          <Font name="Century Gothic Bold" size="13.0"/>
+        </font>
+    </Text>
+</AnchorPane>
